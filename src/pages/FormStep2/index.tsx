@@ -1,9 +1,9 @@
 import * as C from './styles';
 
-export const FormStep1 = () => {
+export const FormStep2 = () => {
   return (
     <C.Container>
-      <h1>Proj Thiago no jeito man</h1>
+      <h1>step 2</h1>
     </C.Container>
-  );
+  )
 }
