@@ -1,36 +1,32 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #020244A;
+  background-color: #02044A;
   color: #fff;
   min-height: 100vh;
 `;
 
 export const Area = styled.div`
   margin: auto;
-  max-width:980px;
-  min-height: 100vw;
-  display :flex;
-  flex-direction: coluns;
+  max-width: 980px;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
-`
 export const Steps = styled.div`
   flex: 1;
   display: flex;
-
 `
 
 export const Sidebar = styled.div`
-  widh: 250px;
-  border-right: 1px solid #16195c;
-
-
+  width: 250px;
+  border-right: 1px solid #2E2E63;
 `
 
 export const Page = styled.div`
   flex: 1;
-  padding-left:40px;
+  padding-left: 40px;
   padding-top: 40px;
-  
 
-`
+`;
