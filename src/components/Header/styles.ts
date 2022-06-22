@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 25px 0;
-  border-bottom: 1px solid #16195C;
+  border-bottom: 1px solid #2E2E63;
 
   h1 {
     margin: 0;
@@ -12,6 +12,6 @@ export const Container = styled.div`
     
   p {
     font-size: 14px;
-    color: #b8b8d4;
+    color: #B8B8D4;
   }
-`
+`;

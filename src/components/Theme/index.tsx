@@ -10,9 +10,10 @@ export const Theme = ({ children }: Props) => {
   return (
     <C.Container>
       <C.Area>
+        <Header />
         <C.Steps>
           <C.Sidebar>
-
+            Aqui vai a Sidebar
           </C.Sidebar>
           <C.Page>
             {children}
@@ -20,6 +21,6 @@ export const Theme = ({ children }: Props) => {
         </C.Steps>
       </C.Area>
     </C.Container>
-  )
+  );
 
 }
