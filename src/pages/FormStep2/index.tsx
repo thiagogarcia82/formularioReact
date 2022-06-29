@@ -1,10 +1,9 @@
-import { useHistory, link, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import * as C from './styles';
 import { FormActions, useForm } from '../../contexts/FormContext';
 import { Theme } from '../../components/Theme'
 import { ChangeEvent, useEffect } from 'react';
 import { SelectOpition } from '../../components/SelectOption';
-import { type } from 'os';
 
 export const FormStep2 = () => {
   const history = useHistory();
@@ -30,10 +29,10 @@ export const FormStep2 = () => {
   }
 
   const setLevel = (level: number) => {
-    dispatch{
+    dispatch({
       type: FormActions.setLevel,
-        payload: level;
-    }
+      payload: level
+    });
   }
 
   return (
@@ -50,7 +49,7 @@ export const FormStep2 = () => {
           description="começei a programar há menos de dois anos"
           icon="💪"
           selected={state.level === 0}
-          onClick={() => setevel(0)}
+          onClick={() => setLevel(0)}
 
 
 
@@ -61,14 +60,14 @@ export const FormStep2 = () => {
           description="ja proframo há dois anos ou mais"
           icon="💪"
           selected={state.level === 1}
-          onClick={() => setevel(1)}
+          onClick={() => setLevel(1)}
 
 
         />
-        <Link to={'/' className="backButton"}>Voltar</Link>
-      <button onClick={handleNextStep}>próximo</button>
+        <Link to='/' className="backButton">Voltar</Link>
+        <button onClick={handleNextStep}>próximo</button>
 
-    </C.Container>
+      </C.Container>
     </Theme >
   );
 }
