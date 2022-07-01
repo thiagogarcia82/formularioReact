@@ -9,23 +9,34 @@ export const FormStep3 = () => {
   const { state, dispatch } = useForm();
 
   useEffect(() => {
-    dispatch({
-      type: FormActions.setCurrentStep,
-      payload: 3
-    });
+    if (state.name === '') {
+      history.push('/');
+    } else {
+      dispatch({
+        type: FormActions.setCurrentStep,
+        payload: 3
+      });
+    }
   }, []);
 
   const handleNextStep = () => {
-    if (state.name !== '') {
-      history.push('/step2');
+    if (state.email !== '' && state.github !== '') {
+      console.log(state);
     } else {
-      alert("Preencha os dados.")
+      alert("Preencha seus dados")
     }
   }
 
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch({
-      type: FormActions.setName,
+      type: FormActions.setEmail,
+      payload: e.target.value
+    });
+  }
+
+  const handGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: FormActions.setGithub,
       payload: e.target.value
     });
   }
@@ -41,11 +52,11 @@ export const FormStep3 = () => {
 
         <label>
 
-          Seu nome e-mail
+          e-mail
           <input
-            type="text"
+            type="email"
             value={state.name}
-            onChange={handleNameChange}
+            onChange={handleEmailChange}
 
           />
         </label>
@@ -53,14 +64,16 @@ export const FormStep3 = () => {
         <label>
           Qual e o seu Github?
           <input
-            type="email"
-            value={state.email}
-          //onChange={handleEmailChange}
+            type="url"
+            value={state.github}
+            onChange={handGithubChange}
           />
 
         </label>
 
-        <button onClick={handleNextStep}>próximo</button>
+        <Link to="/step2" className="backButton">Voltar</Link>
+
+        <button onClick={handleNextStep}>Finalizar cadastro</button>
 
       </C.Container>
     </Theme>
