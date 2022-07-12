@@ -10,7 +10,7 @@ export const FormStep2 = () => {
   const { state, dispatch } = useForm();
 
   useEffect(() => {
-    if (state.name === ``) {
+    if (state.name === '') {
       history.push('/');
     } else {
       dispatch({
@@ -50,9 +50,6 @@ export const FormStep2 = () => {
           icon="💪"
           selected={state.level === 0}
           onClick={() => setLevel(0)}
-
-
-
         />
 
         <SelectOpition
@@ -62,9 +59,8 @@ export const FormStep2 = () => {
           selected={state.level === 1}
           onClick={() => setLevel(1)}
 
-
         />
-        <Link to='/' className="backButton">Voltar</Link>
+        <Link to="/" className="backButton">Voltar</Link>
         <button onClick={handleNextStep}>próximo</button>
 
       </C.Container>

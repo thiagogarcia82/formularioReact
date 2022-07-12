@@ -55,7 +55,7 @@ export const FormStep3 = () => {
           e-mail
           <input
             type="email"
-            value={state.name}
+            value={state.email}
             onChange={handleEmailChange}
 
           />
